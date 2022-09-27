@@ -1,0 +1,24 @@
+{% extends "base2.html" %}
+{% comment '기본 html'%}
+  {% extends "base1.html" %} : 상위 폼.  첫줄에 구현해야 함 
+  block content  : base1.html 의 {block content}을 대체
+{% endcomment%}
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<title>{% block title %}로그인{% endblock %}</title>
+</head>
+<body>
+{% block content %}
+{{msg}}
+<form action="../login/" method="post" name="f">
+{% csrf_token %}
+<table class="w3-bordered"><caption>로그인</caption>
+<tr><th>아이디</th><td><input type="text" name="id"></td></tr>
+<tr><th>비밀번호</th><td><input type="password" name="pass"></td></tr>
+<tr><td colspan="2"><input type="submit" value="로그인">
+    <input type="button" value="회원가입" onclick="location.href='../join/'">
+   </td></tr>
+</table>
+</form>
+{% endblock %}
+</body></html>
