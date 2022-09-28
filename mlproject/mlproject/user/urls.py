@@ -10,10 +10,10 @@ user 폴더에 urls.py
 from django.urls import path
 from . import views
 urlpatterns = [
-    #path('login/', views.login,name='login'), # user/login/ 요청
+    path('main/', views.main,name='main'),
+    path('login/', views.login,name='login'), # user/login/ 요청
     path('join/', views.join,name='join'),
-    #path('main/', views.main,name='main'),
-    #path('logout/', views.logout,name='logout'),
+    path('logout/', views.logout,name='logout'),
     #path('info/<str:id>/', views.info, name='info'), # /user/info/apple/ #id : apple 
     #path('update/<str:id>/', views.update, name='update'),
     #path('delete/<str:id>/', views.delete, name='delete'),

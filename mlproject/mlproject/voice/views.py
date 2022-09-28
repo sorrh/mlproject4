@@ -5,3 +5,6 @@ from django.http import HttpResponseRedirect
 
 # Create your views here.
 
+def main(request):
+        return render(request,'voice/main.html')
+    
