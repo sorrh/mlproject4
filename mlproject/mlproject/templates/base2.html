@@ -118,77 +118,8 @@
   <div id="HOME" class="w3-half w3-dark-grey w3-container" style="height:700px">
     <div class="w3-padding-64 w3-center">
       <h1>SIGN IN</h1>
-      <img src="/w3images/avatar3.png" class="w3-margin w3-circle" alt="Person" style="width:50%">
-      <div class="w3-left-align w3-padding-large">
-        
-
-<div class="w3-container w3-center">
-  <h2>더 많은 혜택을 받으려면?</h2>
-  <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black w3-large">로그인</button>
-  <hr>
-  <h4>회원이 아니신가요?</h4>
-  <button onclick="document.getElementById('id02').style.display='block'" class="w3-button w3-white w3-large">회원 가입</button>
-  <button onclick="location.href='../join/'" class="w3-button w3-grey w3-large">비회원</button>
-<div id="id01" class="w3-modal">
-  <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
-
-    <div class="w3-center"><br>
-      <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
-      <h2 style="color:black">로그인</h2>
-    </div>
-<form class="w3-container" action="../login/" method="post" name="f">
-<input type="hidden" name="csrfmiddlewaretoken" value="6OrhvQ9N3rKyMpdIO9hmCnltHBM31XvSxFxBDTU55xUI7NJKtpD2QtuMSLc1Kqv7">
-  <div class="w3-section" style="color:black">
-    <label><b>아이디</b></label>
-    <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter Username" name="id" required>
-    <label><b>비밀번호</b></label>
-    <input class="w3-input w3-border" type="password" placeholder="Enter Password" name="pass" required>
-    <button class="w3-button w3-block w3-green w3-section w3-padding" type="submit">Login</button>
-</form>
-<div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
-  <button onclick="document.getElementById('id01').style.display='none'" type="button" class="w3-button w3-red">Cancel</button>
-</div>
-</div>
-</div>
-</div>
-
-<div id="id02" class="w3-modal">
-  <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
-
-    <div class="w3-center"><br>
-      <span onclick="document.getElementById('id02').style.display='none'" class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
-      <h2 style="color:black">회원가입</h2>
-      <img src="img_avatar4.png" alt="Avatar" style="width:30%" class="w3-circle w3-margin-top">
-    </div>
-   <form class="w3-container" action="../join/" name="f" method="post">
-<input type="hidden" name="csrfmiddlewaretoken" value="6OrhvQ9N3rKyMpdIO9hmCnltHBM31XvSxFxBDTU55xUI7NJKtpD2QtuMSLc1Kqv7">
-<input type="hidden" name="picture" value="" >
-<table style="color:black"><tr><td rowspan="4" valign="bottom">
- <img src="" width="100" height="120" id="pic"><br>
-<font size="1"><a href="javascript:win_upload()">사진등록</a></font>
-</td><th>아이디</th><td><input type="text" name="id"></td></tr>
-<tr><th>비밀번호</th><td><input type="password" name="pass"></td></tr>
-<tr><th>이름</th><td><input type="text" name="name"></td></tr>
-<tr><th>성별</th>
-   <td><input type="radio" name="gender" value="1" checked>남
-       <input type="radio" name="gender" value="2">여</td></tr>
-<tr><th>전화번호</th>
-  <td colspan="2"><input type="text" name="tel"></td></tr>
-<tr><th>이메일</th>
-  <td colspan="2"><input type="text" name="email"></td></tr>
-<tr><td colspan="3"><input type="submit" value="회원가입"></td></tr>
-</table></form>
-
-    <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
-      <button onclick="document.getElementById('id02').style.display='none'" type="button" class="w3-button w3-red">Cancel</button>
-    </div>
-
-  </div>
-</div>
-</div>
-
-
-      </div>
+     {% comment %}  <img src="/w3images/avatar3.png" class="w3-margin w3-circle" alt="Person" style="width:50%"> {% endcomment %}
+     {% block content %} {%endblock%}
     </div>
   </div>
 </div>
@@ -202,32 +133,39 @@
     </div>
    
   <div class="slideshow-container">
+    
     <div class="mySlides fade">
-      <div class="numbertext">1 / 4</div>
+      <a class="prev" onclick="plusSlides(-1)">❮</a>
+      <div class="numbertext"></div>
       <img src="https://ediya.com/files/menu/IMG_1647320805422.png" style="width:50%">
+      <a class="next" onclick="plusSlides(1)">❯</a>
       <p style="font-weight:900">COFFEE</p>
+      
     </div>
     
     <div class="mySlides fade">
-      <div class="numbertext">2 / 4</div>
+      <a class="prev" onclick="plusSlides(-1)">❮</a>
+      <div class="numbertext"></div>
       <img src="https://ediya.com/files/menu/IMG_1647322029671.png" style="width:50%">
+      <a class="next" onclick="plusSlides(1)">❯</a>
       <p style="font-weight:900">LATTE & TEA</p>
     </div>
     
     <div class="mySlides fade">
-      <div class="numbertext">3 / 4</div>
+      <a class="prev" onclick="plusSlides(-1)">❮</a>
+      <div class="numbertext"></div>
       <img src="https://ediya.com/files/menu/IMG_1647322413547.png" style="width:50%">
+      <a class="next" onclick="plusSlides(1)">❯</a>
       <p style="font-weight:900">ADE & SHAKE</p>
     </div>
   
     <div class="mySlides fade">
-      <div class="numbertext">4 / 4</div>
+      <a class="prev" onclick="plusSlides(-1)">❮</a>
+      <div class="numbertext"></div>
       <img src="https://ediya.com/files/menu/IMG_1647322184521.png" style="width:50%">
+      <a class="next" onclick="plusSlides(1)">❯</a>
       <p style="font-weight:900">FLATCCINO</p>
     </div>
-    
-    <a class="prev" onclick="plusSlides(-1)">❮</a>
-    <a class="next" onclick="plusSlides(1)">❯</a>
     
     </div>
     <br>
@@ -269,11 +207,7 @@
     <br>
     <p>Just call me awesome.</p>
   </div>
-      </div>
-    </div>
-  </div>
 </div>
-<!--https://ediya.com/files/menu/IMG_1644303556634.png-->
 
 <!-- Third Grid: Swing By & Contact -->
 <div class="w3-row" id="goods">
