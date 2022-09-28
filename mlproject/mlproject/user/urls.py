@@ -20,4 +20,5 @@ urlpatterns = [
  #   path('password/<str:id>/', views.password, name='password'),
  #   path('list/', views.list,name='list'),
  #   path('picture/', views.picture,name='pircure'),
+    path('detectFace/', views.detectFace, name='detectFace'), #user/detectFace
 ]

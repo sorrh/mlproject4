@@ -1,7 +1,11 @@
 from django.shortcuts import render
+from django.conf import settings
 from .models import User
 from django.http import HttpResponseRedirect
-from django.contrib import auth   
+from django.contrib import auth
+from .detect import rewrite
+from .models import ImageUploadModel
+from .forms import ImageUploadForm
 
 # Create your views here.
 #http://127.0.0.1:8000/member/login/
@@ -149,3 +153,23 @@ def delete_rtn(request,id) :
         else :
            context = {"msg": "비밀번호 오류 입니다.", "url": "../../delete/"+id+"/"}
            return render(request, 'alert.html', context)
+
+#이미지 업로드를 위한 함수
+def detectFace(request):
+    if request.method == "POST":
+        form = ImageUploadForm(request.POST, request.FILES)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.save()
+            # db delete
+            if ImageUploadModel.objects.all().count() > 100:
+                obs = ImageUploadModel.objects.all().first()
+                if obs:
+                    obs.delete()
+
+            img_path = f"{settings.MEDIA_ROOT}/{form.instance.document.name}"
+            rewrite(img_path)
+            return render(request, "detectFace.html", {"form": form, "post": post})
+    else:
+        form = ImageUploadForm()
+    return render(request, "detectFace.html", {"form": form})  
