@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\dfg07\djangovenv\djangovenv"
+VIRTUAL_ENV="C:\Users\Park Jin-Young\Desktop\EZORDER Project\mlproject4\djangovenv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
